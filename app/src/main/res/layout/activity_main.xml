@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Статистика -->
+    <TextView
+        android:id="@+id/totalExamples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="24sp"
+        android:layout_marginLeft="302dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Итого проверено примеров"
+        android:textSize="16sp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="26dp"/>
+
+    <TextView
+        android:id="@+id/correctAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="24sp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="109dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Правильно"
+        android:textSize="16sp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="68dp"/>
+
+    <TextView
+        android:id="@+id/wrongAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="24sp"
+        android:layout_marginLeft="267dp"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Не правильно"
+        android:textSize="16sp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="68dp"/>
+
+    <!-- Процент правильных ответов -->
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00%"
+        android:textSize="24sp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginTop="349dp"/>
+
+    <!-- Время -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ВРЕМЯ (сек)"
+        android:textSize="16sp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="152dp"/>
+
+    <TextView
+        android:id="@+id/minTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="258dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Минимум"
+        android:textSize="14sp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="211dp"/>
+
+    <TextView
+        android:id="@+id/maxTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="18sp"
+        android:layout_marginLeft="187dp"
+        android:layout_marginTop="258dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Максимум"
+        android:textSize="14sp"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="211dp"/>
+
+    <TextView
+        android:id="@+id/avgTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:textSize="18sp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="252dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Среднее"
+        android:textSize="14sp"
+        android:layout_marginLeft="261dp"
+        android:layout_marginTop="211dp"/>
+
+    <!-- Пример и кнопки -->
+    <TextView
+        android:id="@+id/exampleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00 + 00 = 00"
+        android:textSize="32sp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="442dp"/>
+
+    <!-- Добавленный элемент для отображения результата -->
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="400dp"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/correctButton"
+        android:layout_width="153dp"
+        android:layout_height="51dp"
+        android:text="ВЕРНО"
+        android:enabled="false"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="502dp"/>
+
+    <Button
+        android:id="@+id/wrongButton"
+        android:layout_width="153dp"
+        android:layout_height="51dp"
+        android:text="НЕВЕРНО"
+        android:enabled="false"
+        android:layout_marginLeft="197dp"
+        android:layout_marginTop="502dp"/>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="314dp"
+        android:layout_height="47dp"
+        android:text="СТАРТ"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="591dp"/>
+
+</RelativeLayout>
