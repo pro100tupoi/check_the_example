@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 import kotlin.math.roundToInt
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     private var isCorrectAnswer = false
 
     private val timeRecords = mutableListOf<Long>()
-    private val softGreen = Color.parseColor("#C8E6C9")
-    private val softRed = Color.parseColor("#FFCDD2")
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -143,11 +144,11 @@ class MainActivity : AppCompatActivity() {
         if (isCorrect) {
             correctAnswers++
             resultTextView.text = "ПРАВИЛЬНО"
-            resultTextView.setBackgroundColor(softGreen)
+            resultTextView.setBackgroundColor(resources.getColor(R.color.green, theme))
         } else {
             wrongAnswers++
             resultTextView.text = "НЕ ПРАВИЛЬНО"
-            resultTextView.setBackgroundColor(softRed)
+            resultTextView.setBackgroundColor(resources.getColor(R.color.red, theme))
         }
 
         updateStatistics(timeSpent)
