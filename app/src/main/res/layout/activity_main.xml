@@ -143,7 +143,7 @@
         android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="117dp"
         android:layout_marginTop="400dp"
         android:textSize="24sp" />
 
