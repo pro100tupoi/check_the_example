@@ -7,11 +7,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
+import com.example.check_the_example.databinding.ActivityMainBinding
 import kotlin.random.Random
 import kotlin.math.roundToInt
 import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
 
     private lateinit var totalExamplesTextView: TextView
     private lateinit var correctAnswersTextView: TextView
@@ -46,18 +48,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        totalExamplesTextView = findViewById(R.id.totalExamples)
-        correctAnswersTextView = findViewById(R.id.correctAnswers)
-        wrongAnswersTextView = findViewById(R.id.wrongAnswers)
-        percentageTextView = findViewById(R.id.percentage)
-        minTimeTextView = findViewById(R.id.minTime)
-        maxTimeTextView = findViewById(R.id.maxTime)
-        avgTimeTextView = findViewById(R.id.avgTime)
-        exampleTextView = findViewById(R.id.exampleText)
-        resultTextView = findViewById(R.id.resultText)
-        startButton = findViewById(R.id.startButton)
-        correctButton = findViewById(R.id.correctButton)
-        wrongButton = findViewById(R.id.wrongButton)
+        totalExamplesTextView = binding.totalExamples
+        correctAnswersTextView = binding.correctAnswers
+        wrongAnswersTextView = binding.wrongAnswers
+        percentageTextView = binding.percentage
+        minTimeTextView = binding.minTime
+        maxTimeTextView = binding.maxTime
+        avgTimeTextView = binding.avgTime
+        exampleTextView = binding.exampleText
+        resultTextView = binding.resultText
+        startButton = binding.startButton
+        correctButton = binding.correctButton
+        wrongButton = binding.wrongButton
     }
 
     private fun setupButtons() {
