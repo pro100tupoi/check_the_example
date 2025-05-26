@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+
         totalExamplesTextView = binding.totalExamples
         correctAnswersTextView = binding.correctAnswers
         wrongAnswersTextView = binding.wrongAnswers
