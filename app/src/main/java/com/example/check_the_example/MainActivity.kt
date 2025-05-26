@@ -71,12 +71,10 @@ class MainActivity : AppCompatActivity() {
             else -> 0.0
         }
 
-        // Округление для деления
         if (operator == "/") {
             currentAnswer = round(currentAnswer * 100) / 100
         }
 
-        // С вероятностью 50% делаем ответ неверным
         isCorrectAnswer = Random.nextBoolean()
         val displayedAnswer = if (isCorrectAnswer) {
             currentAnswer
@@ -106,10 +104,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkAnswer(userChoice: Boolean) {
         val endTime = SystemClock.elapsedRealtime()
-        val timeSpent = (endTime - startTime) / 1000.0  // Уже Double
-        timeRecords.add(timeSpent)  // Теперь сохраняем Double, а не Long
+        val timeSpent = (endTime - startTime) / 1000.0
+        timeRecords.add(timeSpent)
 
-        // Остальной код без изменений
         totalExamples++
         val isCorrect = userChoice == isCorrectAnswer
 

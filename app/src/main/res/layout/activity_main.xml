@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Статистика -->
     <TextView
         android:id="@+id/totalExamples"
         android:layout_width="wrap_content"
@@ -57,7 +56,6 @@
         android:layout_marginLeft="223dp"
         android:layout_marginTop="68dp"/>
 
-    <!-- Процент правильных ответов -->
     <TextView
         android:id="@+id/percentage"
         android:layout_width="wrap_content"
@@ -67,7 +65,6 @@
         android:layout_marginLeft="159dp"
         android:layout_marginTop="349dp"/>
 
-    <!-- Время. -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,7 +124,6 @@
         android:layout_marginLeft="261dp"
         android:layout_marginTop="211dp"/>
 
-    <!-- Пример и кнопки -->
     <TextView
         android:id="@+id/exampleText"
         android:layout_width="wrap_content"
@@ -136,8 +132,6 @@
         android:textSize="32sp"
         android:layout_marginLeft="105dp"
         android:layout_marginTop="442dp"/>
-
-    <!-- Добавленный элемент для отображения результата -->
 
     <TextView
         android:id="@+id/resultText"
@@ -172,5 +166,4 @@
         android:text="@string/button_start"
         android:layout_marginLeft="41dp"
         android:layout_marginTop="591dp"/>
-
 </RelativeLayout>
