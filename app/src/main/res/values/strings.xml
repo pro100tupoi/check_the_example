@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Check_the_example</string>
+    <string name="total_examples_text">Итого проверено примеров</string>
+    <string name="result_correct">Правильно</string>
+    <string name="result_wrong">Не правильно</string>
+    <string name="time_header">ВРЕМЯ (сек)</string>
+    <string name="min_time_label">Минимум</string>
+    <string name="max_time_label">Максимум</string>
+    <string name="avg_time_label">Среднее</string>
+    <string name="button_start">СТАРТ</string>
+    <string name="button_correct">ВЕРНО</string>
+    <string name="button_wrong">НЕВЕРНО</string>
 </resources>

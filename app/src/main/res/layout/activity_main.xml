@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Итого проверено примеров"
+        android:text="@string/total_examples_text"
         android:textSize="16sp"
         android:layout_marginLeft="73dp"
         android:layout_marginTop="26dp"/>
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Правильно"
+        android:text="@string/result_correct"
         android:textSize="16sp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="68dp"/>
@@ -52,7 +52,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Не правильно"
+        android:text="@string/result_wrong"
         android:textSize="16sp"
         android:layout_marginLeft="223dp"
         android:layout_marginTop="68dp"/>
@@ -71,7 +71,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ВРЕМЯ (сек)"
+        android:text="@string/time_header"
         android:textSize="16sp"
         android:layout_marginLeft="148dp"
         android:layout_marginTop="152dp"/>
@@ -80,7 +80,7 @@
         android:id="@+id/minTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="0.00"
         android:textSize="18sp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="258dp"/>
@@ -88,7 +88,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Минимум"
+        android:text="@string/min_time_label"
         android:textSize="14sp"
         android:layout_marginLeft="34dp"
         android:layout_marginTop="211dp"/>
@@ -97,15 +97,15 @@
         android:id="@+id/maxTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="18sp"
         android:layout_marginLeft="187dp"
-        android:layout_marginTop="258dp"/>
+        android:layout_marginTop="258dp"
+        android:text="0.00"
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Максимум"
+        android:text="@string/max_time_label"
         android:textSize="14sp"
         android:layout_marginLeft="153dp"
         android:layout_marginTop="211dp"/>
@@ -122,7 +122,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Среднее"
+        android:text="@string/avg_time_label"
         android:textSize="14sp"
         android:layout_marginLeft="261dp"
         android:layout_marginTop="211dp"/>
@@ -151,7 +151,7 @@
         android:id="@+id/correctButton"
         android:layout_width="153dp"
         android:layout_height="51dp"
-        android:text="ВЕРНО"
+        android:text="@string/button_correct"
         android:enabled="false"
         android:layout_marginLeft="34dp"
         android:layout_marginTop="502dp"/>
@@ -160,7 +160,7 @@
         android:id="@+id/wrongButton"
         android:layout_width="153dp"
         android:layout_height="51dp"
-        android:text="НЕВЕРНО"
+        android:text="@string/button_wrong"
         android:enabled="false"
         android:layout_marginLeft="197dp"
         android:layout_marginTop="502dp"/>
@@ -169,7 +169,7 @@
         android:id="@+id/startButton"
         android:layout_width="314dp"
         android:layout_height="47dp"
-        android:text="СТАРТ"
+        android:text="@string/button_start"
         android:layout_marginLeft="41dp"
         android:layout_marginTop="591dp"/>
 

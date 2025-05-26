@@ -15,19 +15,6 @@ import kotlin.math.round
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
-    private lateinit var totalExamplesTextView: TextView
-    private lateinit var correctAnswersTextView: TextView
-    private lateinit var wrongAnswersTextView: TextView
-    private lateinit var percentageTextView: TextView
-    private lateinit var minTimeTextView: TextView
-    private lateinit var maxTimeTextView: TextView
-    private lateinit var avgTimeTextView: TextView
-    private lateinit var exampleTextView: TextView
-    private lateinit var resultTextView: TextView
-    private lateinit var startButton: Button
-    private lateinit var correctButton: Button
-    private lateinit var wrongButton: Button
-
     private var correctAnswers = 0
     private var wrongAnswers = 0
     private var totalExamples = 0
@@ -35,48 +22,31 @@ class MainActivity : AppCompatActivity() {
     private var currentAnswer = 0.0
     private var isCorrectAnswer = false
 
-    private val timeRecords = mutableListOf<Long>()
+    private val timeRecords = mutableListOf<Double>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initViews()
         setupButtons()
     }
 
-    private fun initViews() {
-
-        totalExamplesTextView = binding.totalExamples
-        correctAnswersTextView = binding.correctAnswers
-        wrongAnswersTextView = binding.wrongAnswers
-        percentageTextView = binding.percentage
-        minTimeTextView = binding.minTime
-        maxTimeTextView = binding.maxTime
-        avgTimeTextView = binding.avgTime
-        exampleTextView = binding.exampleText
-        resultTextView = binding.resultText
-        startButton = binding.startButton
-        correctButton = binding.correctButton
-        wrongButton = binding.wrongButton
-    }
-
     private fun setupButtons() {
-        startButton.setOnClickListener {
+        binding.startButton.setOnClickListener {
             generateExample()
-            startButton.isEnabled = false
-            correctButton.isEnabled = true
-            wrongButton.isEnabled = true
-            resultTextView.text = ""
+            binding.startButton.isEnabled = false
+            binding.correctButton.isEnabled = true
+            binding.wrongButton.isEnabled = true
+            binding.resultText.text = ""
             startTime = SystemClock.elapsedRealtime()
         }
 
-        correctButton.setOnClickListener {
+        binding.correctButton.setOnClickListener {
             checkAnswer(true)
             disableAnswerButtons()
         }
 
-        wrongButton.setOnClickListener {
+        binding.wrongButton.setOnClickListener {
             checkAnswer(false)
             disableAnswerButtons()
         }
@@ -121,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             else -> displayedAnswer.toInt().toString()
         }
 
-        exampleTextView.text = "$num1 $operator $num2 = $answerText"
+        binding.exampleText.text = "$num1 $operator $num2 = $answerText"
     }
 
     private fun generateWrongAnswer(correctAnswer: Double, operator: String): Double {
@@ -136,30 +106,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkAnswer(userChoice: Boolean) {
         val endTime = SystemClock.elapsedRealtime()
-        val timeSpent = (endTime - startTime) / 1000.0
-        timeRecords.add(timeSpent.roundToInt().toLong())
+        val timeSpent = (endTime - startTime) / 1000.0  // Уже Double
+        timeRecords.add(timeSpent)  // Теперь сохраняем Double, а не Long
 
+        // Остальной код без изменений
         totalExamples++
         val isCorrect = userChoice == isCorrectAnswer
 
         if (isCorrect) {
             correctAnswers++
-            resultTextView.text = "ПРАВИЛЬНО"
-            resultTextView.setBackgroundColor(resources.getColor(R.color.green, theme))
+            binding.resultText.text = "ПРАВИЛЬНО"
+            binding.resultText.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
         } else {
             wrongAnswers++
-            resultTextView.text = "НЕ ПРАВИЛЬНО"
-            resultTextView.setBackgroundColor(resources.getColor(R.color.red, theme))
+            binding.resultText.text = "НЕПРАВИЛЬНО"
+            binding.resultText.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
         }
 
         updateStatistics(timeSpent)
-        startButton.isEnabled = true
+        binding.startButton.isEnabled = true
     }
 
     private fun updateStatistics(timeSpent: Double) {
-        totalExamplesTextView.text = totalExamples.toString()
-        correctAnswersTextView.text = correctAnswers.toString()
-        wrongAnswersTextView.text = wrongAnswers.toString()
+        binding.totalExamples.text = totalExamples.toString()
+        binding.correctAnswers.text = correctAnswers.toString()
+        binding.wrongAnswers.text = wrongAnswers.toString()
 
         val percentage = if (totalExamples > 0) {
             (correctAnswers.toDouble() / totalExamples * 100).let {
@@ -168,17 +139,17 @@ class MainActivity : AppCompatActivity() {
         } else {
             "0.00%"
         }
-        percentageTextView.text = percentage
+        binding.percentage.text = percentage
 
         if (timeRecords.isNotEmpty()) {
-            minTimeTextView.text = timeRecords.min().toString()
-            maxTimeTextView.text = timeRecords.max().toString()
-            avgTimeTextView.text = "%.2f".format(timeRecords.average())
+            binding.minTime.text = "%.2f".format(timeRecords.min())
+            binding.maxTime.text = "%.2f".format(timeRecords.max())
+            binding.avgTime.text = "%.2f".format(timeRecords.average())
         }
     }
 
     private fun disableAnswerButtons() {
-        correctButton.isEnabled = false
-        wrongButton.isEnabled = false
+        binding.correctButton.isEnabled = false
+        binding.wrongButton.isEnabled = false
     }
 }
